@@ -1,4 +1,4 @@
-# Geektime Rust 语言训练营
+# 02 - Concurrency
 
 ## 环境设置
 
