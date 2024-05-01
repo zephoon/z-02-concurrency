@@ -1,5 +1,5 @@
-use anyhow::{Result, anyhow};
-use std::{process::id, sync::mpsc, thread, time::Duration};
+use anyhow::{anyhow, Result};
+use std::{sync::mpsc, thread, time::Duration};
 
 const NUM_PRODUCERS: usize = 4;
 
@@ -23,7 +23,9 @@ fn main() -> Result<()> {
         }
         println!("consumer exit");
     });
-    consumer.join().map_err(|e| anyhow!("Thread join error: {:?}", e))?;
+    consumer
+        .join()
+        .map_err(|e| anyhow!("Thread join error: {:?}", e))?;
     Ok(())
 }
 
